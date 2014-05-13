@@ -1,0 +1,29 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      h3 Sign Up
+    .modal-body
+      .modal-error.alert.alert-block
+        h4.alert-heading Error!
+        p.alert-message 
+      a.btn.fb-signup.btn-primary.btn-large Sign up with Facebook
+      .or - or -
+      form(role='form')
+        .form-group
+          label(for='signupEmail') E-mail address
+          input#signupEmail.email.form-control(type='text')
+        .form-group
+          label(for='signupName') Full name
+          input#signupName.fullname.form-control(type='text')          
+        .form-group
+          label(for='signupUsername') User name
+          input#signupUsername.username.form-control(type='text')
+        .form-group
+          label(for='signupPassword') Password
+          input#signupPassword.password.form-control(type='password')
+        .form-group
+          label(for='signupConfirmPassword') Confirm Password
+          input#signupConfirmPassword.confirmpassword.form-control(type='password')
+        .signup-btn.a.btn.btn-primary(type='submit',data-loading-text="Verifying...") Sign Up
+    .modal-footer
+      a.btn.btn-default(data-dismiss="modal") Cancel

@@ -1,0 +1,20 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      h3 Log In
+    .modal-body
+      .modal-error.alert.alert-block
+        h4.alert-heading Error!
+        p.alert-message 
+      a.btn.fbsignin.btn-primary.btn-large Sign in with Facebook
+      .or - or -
+      form(role='form')
+        .form-group
+          label(for='loginEmail') E-mail address or user name
+          input#loginEmail.email.form-control(type='text')
+        .form-group
+          label(for='loginPassword') Password
+          input.password#loginPassword.form-control(type='password')
+    .modal-footer
+      .login-btn.a.btn.btn-primary(type='submit', data-loading-text="Verifying...") Log In
+      a.btn.btn-default(data-dismiss="modal") Cancel

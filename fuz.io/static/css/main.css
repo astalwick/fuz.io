@@ -1,0 +1,175 @@
+/* CLEAN */
+
+.loginsignup .btn {
+  display: none;
+}
+
+.signed-in .loginsignup .login,
+.signed-in .loginsignup .signup,
+.loginsignup .logout {
+  display: none;
+}
+
+.signed-in .loginsignup .logout,
+.loginsignup .signup,
+.loginsignup .login {
+  display: inline-block;
+}
+
+.loginsignup .username {
+  display:inline-block;
+  vertical-align:bottom;
+}
+
+#invite .workspaceurl {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+body {
+  padding: 50px;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  background-color: #ffffff;  
+}
+
+a {
+  color: #08C;
+  text-decoration: none;  
+}
+
+.titleContainer {
+  display: block;
+}
+
+
+.workspaceUrl,
+.copyContainer {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.modal .modal-error {
+  display: none;
+}
+
+
+
+/* UNMODIFIED */
+
+#signupform, #user_errordiv, #loginform
+{
+  display: none;
+}
+
+#signupmodal .modal-body,
+#loginmodal .modal-body {
+  text-align: center;
+}
+
+#signupmodal .fbsignup,
+#loginmodal .fbsignin {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.loginsignup {
+  float: right;
+}
+
+.loginsignup a {
+  margin-left:20px;
+}
+
+.or {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-top: 0;
+}
+
+
+.uploadcontrol {
+  display:none;
+  float: right;
+}
+
+.uploadcontrol p {
+  margin: 0 14px 0 14px;
+}
+
+.navbar input {
+  margin: 5px 20px 5px;
+}
+
+
+
+.progress {
+  margin: 9px 14px 9px;
+}
+
+#loginmodal .alert {
+  display:none;
+}
+
+
+#signupmodal .alert {
+  display:none;
+}
+
+.newfile {
+  margin-right:4px;
+}
+
+.workspace-option-link {
+  color: #3A87AD;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.workspace-title-edit {
+  display: inline-block;
+  line-height: 36px;
+  font-size: 30px;
+  font-weight: bold;
+  height: 40px;
+  width: 400px;
+}
+
+.hide {
+  display: none;
+}
+
+.drop-notice {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 13px;
+  line-height: 36px;
+  font-size: 18px;
+}
+
+.create-workspace.btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.copy.btn.zeroclipboard-is-hover {
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+  text-decoration: none;
+}
+
+.copy.btn.zeroclipboard-is-active {
+  background-image: none;
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}

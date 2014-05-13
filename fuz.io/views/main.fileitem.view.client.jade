@@ -1,0 +1,14 @@
+td.filename
+  - if(status == 'Cancelled' || status == 'Errored')
+    span.status.label.label-danger #{status}  
+    #{fileName}
+  - else
+    a.fileDownload(href=downloadUrl, target='_blank') #{fileName}
+td.filesize
+  
+  | #{size} bytes 
+  - if(size != uploadedBytes)
+    br
+    | #{uploadedBytes} uploaded
+td.uploadedBy
+  #{uploadedBy}

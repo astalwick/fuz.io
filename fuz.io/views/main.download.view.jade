@@ -1,0 +1,10 @@
+h2.popover-top(rel='popover', data-content='Unlike other file transfer services, FUZ.IO is bi-directional.  Your friends can send files back to you just as easily as you send files to them.<BR><BR>  Perfect for collaboration!', data-original-title="Receive Files") 3. Download Files From Your Friend
+#wsfiles
+  table.table.table-striped.table-bordered.table-condensed
+    thead
+      tr
+        th Filename
+        th Size
+        th Uploaded By
+    tbody.incomingFiles
+      != partial('main.download.nofiles.view.client.jade')

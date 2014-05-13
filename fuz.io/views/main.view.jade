@@ -1,0 +1,92 @@
+doctype html
+html
+  head
+    
+    link(rel='stylesheet', href='/static/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/static/css/main.css')
+    //- script(type='text/javascript', src="/static/scripts/jquery-1.7.2.js")
+    script(type='text/javascript', src="/static/scripts/require.js")
+    script(type='text/javascript').
+      require.config({
+        "baseUrl" : "/"
+
+      , "waitSeconds" : "30"
+
+      , "shim" : {
+          'backbone': {
+            //These script dependencies should be loaded before loading
+            //backbone.js
+            deps: ['underscore', 'jquery', 'jquery.cookie'],
+            //Once loaded, use the global 'Backbone' as the
+            //module value.
+            exports: 'Backbone'
+          }
+        , 'jquery.cookie': {
+            deps: ['jquery']
+          }
+        , 'underscore': {
+            exports: '_'
+          }
+        }
+
+      , "paths" : {
+            "jquery"                : "/static/scripts/jquery-1.10.2.min"
+          , "jquery.cookie"         : "/static/scripts/jquery.cookie"
+          , "underscore"            : "/static/scripts/underscore"
+          , "backbone"              : "/static/scripts/backbone"
+          , "plupload"              : "/static/scripts/plupload/js/plupload.full.min"
+
+          , "bootstrap"             : "/static/bootstrap/js/bootstrap.min"
+          , 'socket.io'             : '/socket.io/socket.io'
+
+        }
+      });
+      window.siteBaseURL="#{siteBaseURL}";
+      require( ["/static/scripts/main.js"], function(main) {
+        main.init();
+      });
+    script(type='text/javascript').
+      /*(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===d.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config".split(" ");
+      for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
+      mixpanel.init("33db3326375fc1693793ec866d011849");*/
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 176727969120675, // App ID
+          //channelUrl : siteurl + '/javascripts/fbchannel.html', // Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+        });
+      };
+      // Load the SDK Asynchronously
+      (function(d){
+         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         ref.parentNode.insertBefore(js, ref);
+       }(document));       
+  body#fileDropArea(style='padding-top:70px')
+      
+    .navbar.navbar-fixed-top.navbar-default
+      != partial('navbar.view.jade')
+      
+    .container    
+      .row
+        .col-md-12.titleContainer
+          != partial('main.title.view.jade')
+
+      .row.copyurlrow
+        .col-md-9
+          #invite
+            != partial('main.invite.view.jade')
+          #upload
+            != partial('main.upload.view.jade')
+          #download
+            != partial('main.download.view.jade')
+          
+        .col-md-3
+          #myworkspaces
+            != partial('side.myworkspaces.view.jade')
+          #sharedworkspaces
+            != partial('side.sharedworkspaces.view.jade')

@@ -1,0 +1,40 @@
+{
+  "name": "data.fuz.io",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "connect": "2.12.x",
+    "urlrouter": "0.5.x",    
+
+    "redis": "0.10.x",
+    "hiredis": "0.1.x",
+
+    "mongoose": "3.8.x",
+
+    "awssum-amazon-s3": "1.2.x",
+
+    "bcrypt": "0.7.7",
+    "node-uuid": "1.4.x",
+    "keygrip": "1.0.x",
+
+    "async": "0.2.9",
+    "underscore": "1.5.x",
+    "formidable": "1.0.x",
+    "cookies": "0.3.x",
+    "mime": "1.2.x",
+
+    "streamfuz": "0.1.x",
+    "streambrk": "0.1.x",
+    
+    "colors": "0.6.x",
+    "mocha": "1.17.x",
+    "should": "2.1.x",
+    "seedrandom": "2.3.x"   
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "should": "~2.1.1"
+  }
+}
