@@ -1,11 +1,11 @@
 fuz.io
 ======
 
-Fuz.io is a simple file-transfer / cloud-hosting app in Node.js.  The basic idea is that, well, it's no fun having to wait for a file to upload before your friend starts downloading.  With most other services, you upload your file and then an email is sent, and your friend receives the file.
+Fuz.io is a simple file-transfer / cloud-hosting app in Node.js.  The basic idea is that, well, it's no fun having to wait for your friend to completely upload his or her file you can start downloading.  That's a crazy waste of time if you're dealing with a large file, and  yet that's the way that most other web-based file transfer services behave.
 
-I wanted something closer to sending files through an instant messaging app - the download should start immediately.  
+I wanted something closer to sending files through an instant messaging app - the download should start immediately, whether or not the upload is complete.
 
-Fuz.io does this: instant-start browser-to-browser file transfer.
+Fuz.io does this: instant-start browser-to-browser file transfer with no weird plugins.
 
 (Side note: this was entirely a learn-node-js project, so don't be surprised if there are corners of the code that are a bit, well, weird)
 
@@ -62,3 +62,4 @@ The biggest things on my list of remaining tasks are:
   * The workspace system is a bit of a terrible idea in the first place, and very limiting.  Basically, every file belongs to a workspace, and a user can have multiple workspaces.  Not folders, that implies subfolders - no, workspaces.  The idea was: you could invite different people to different workspaces.  At the end of the day, though, this basically just made things weird for no good reason.
 3. Add a payment system and accounts to the front end
 4. Email notifications / etc.
+5. Improve error handling on file upload cancellation/abort/error
