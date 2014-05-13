@@ -12,6 +12,7 @@ Fuz.io does this: instant-start browser-to-browser file transfer.
 ## How it works
 
 Uploading works something like this:
+
 1. A standard HTML5 file upload is initiated by a user
 2. The API server receives the request
   * It immediately broadcasts the availability of a file to connected clients via Redis
@@ -22,6 +23,7 @@ Uploading works something like this:
 4. As each part completes, fuz.io notifies connected clients via Redis.
 
 When a download is initiated, the following happens:
+
 1. The API server checks whether or not the upload has completed.  If it has, then it simply pipes the complete file from complete.fuz.io.  We're done.
 2. If the upload has not completed, then the API server begins streaming parts.  It requests the first 50kb part from parts.fuz.io bucket, and sends it out to the client, then appends the second part, and the third, and so on.  
 
@@ -54,6 +56,7 @@ StreamFuz is used to fetch all of those parts, buffer them (so that we don't int
 ## Todo
 
 The biggest things on my list of remaining tasks are:
+
 1. Implement quotas
 2. Refactor the workspace system
   * The workspace system is a bit of a terrible idea in the first place, and very limiting.  Basically, every file belongs to a workspace, and a user can have multiple workspaces.  Not folders, that implies subfolders - no, workspaces.  The idea was: you could invite different people to different workspaces.  At the end of the day, though, this basically just made things weird for no good reason.
