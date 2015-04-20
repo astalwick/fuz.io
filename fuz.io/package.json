@@ -18,5 +18,10 @@
     , "keygrip" : "1.x"
     , "colors" : "0.6.x"
 
+  },
+  "scripts": {
+    "install-start": "npm install && npm run start-prod-forever",
+    "start-prod-forever": "NODE_ENV=production forever app.js"
   }
+
 }

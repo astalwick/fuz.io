@@ -12,8 +12,10 @@
     "mongoose": "3.8.x",
 
     "awssum-amazon-s3": "1.2.x",
+    "awssum-amazon":"1.x.x",
+    "awssum":"1.x.x",
 
-    "bcrypt": "0.7.7",
+    "bcrypt": "0.8.x",
     "node-uuid": "1.4.x",
     "keygrip": "1.0.x",
 
@@ -27,14 +29,16 @@
     "streambrk": "0.1.x",
     
     "colors": "0.6.x",
-    "mocha": "1.17.x",
-    "should": "2.1.x",
+
     "seedrandom": "2.3.x"   
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "install-start": "npm install && npm run start-prod-forever",
+    "start-prod-forever": "NODE_ENV=production forever App.js"
   },
   "devDependencies": {
-    "should": "~2.1.1"
+    "should": "~2.1.1",
+    "mocha": "1.17.x"
   }
 }

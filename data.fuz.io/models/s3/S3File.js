@@ -96,9 +96,9 @@ S3PutStream.prototype._beginUpload = function() {
       }
     }
     else {
-      self.hash = data.Headers.etag.replace('\"', '');
-      self.emit('uploadcomplete', self.hash);
+      self.hash = data.Headers.etag.replace(/\"/g, '');
       self.completed = true;
+      self.emit('uploadcomplete', self.hash);
       delete self.retryBuffer;
     }
   });  

@@ -9,8 +9,8 @@ function Config() {
     this.url = 'https://fuz.io'
   }
   this.port = 3001;
-  this.redisHost = '127.0.0.1';
-  this.mongoHost = '127.0.0.1';
+  this.redisHost = process.env['FUZIOREDIS_PORT_6379_TCP_ADDR'] || '127.0.0.1';
+  this.mongoHost = process.env['FUZIOMONGO_PORT_27017_TCP_ADDR'] || '127.0.0.1';
   this.mongoDbName = 'fuzio';
 
   this.blockSize = 50000;

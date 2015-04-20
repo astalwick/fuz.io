@@ -177,10 +177,11 @@ FileUploader.prototype._onFinish = function() {
 };
 
 FileUploader.prototype._uploadComplete = function() {
-  if(this.completeStream.completed && this.partStream.completed) {
-    console.log('')
+  var self = this;
+  if(this.completeStream.completed && this.partStream.ended) {
+    console.log('FILEUPLOADER - PartFileStream and CompleteFileStream have both completed.')
     if(this.completeStream.hash == this.partStream.hash) {
-      console.log('FILEUPLOADER - Upload complete, notifying out', self.partStream.hash)
+      console.log('FILEUPLOADER - Hashes match, notifying out', self.partStream.hash)
       self.emit('uploadcomplete', self.partStream.hash)
     }
     else {

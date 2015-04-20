@@ -63,8 +63,8 @@ app.put('/api/*', proxy)
 function proxy(req, res, next) {
   console.log('proxy begin', req.method, req.url)
 
-  req.on('error', function() {'client request error', arguments})
-  res.on('error', function() {'client response error', arguments})
+  req.on('error', function() {console.log('client request error', arguments)})
+  res.on('error', function() {console.log('client response error', arguments)})
   req.pause();
   var options = {
     hostname: req.headers['host'],
@@ -79,9 +79,9 @@ function proxy(req, res, next) {
     res.writeHeader(serverResponse.statusCode, serverResponse.headers);
     serverResponse.pipe(res);
     serverResponse.resume();
-    serverResponse.on('error', function() {'server response error', arguments})
+    serverResponse.on('error', function() {console.log('server response error', arguments)})
   });
-  connector.on('error', function() {'server request error', arguments})
+  connector.on('error', function() {console.log('server request error', arguments)})
   
 
   req.pipe(connector);

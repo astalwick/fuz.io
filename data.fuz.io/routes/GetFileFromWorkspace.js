@@ -12,7 +12,16 @@ function getFileFromWorkspace(req, res, next) {
       return;
     }
 
-    res.writeHead(200, {'eTag' : expectedMD5, 'Content-Length': contentLength, 'Content-Type': 'binary/octet-stream', 'Content-Disposition' : 'attachment; req.params.fileName='+ req.params.fileName, 'Access-Control-Allow-Origin': siteconfig.url, 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS' });
+    var response = {
+        'Content-Length': contentLength
+      , 'Content-Type': 'binary/octet-stream'
+      , 'Content-Disposition' : 'attachment; req.params.fileName='+ req.params.fileName
+      , 'Access-Control-Allow-Origin': siteconfig.url
+      , 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS' 
+    };
+    if(expectedMD5)
+      response.eTag = expectedMD5;
+    res.writeHead(200, response);
     fileDownloader.pipe(res);
   });
 }

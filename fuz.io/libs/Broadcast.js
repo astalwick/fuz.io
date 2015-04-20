@@ -1,6 +1,7 @@
 var socketio  = require('socket.io')
   , redis     = require('redis')
   , _         = require('underscore')
+  , Config    = require('../Config.js')
   ;
 
 exports.register = function(server) {
@@ -29,7 +30,7 @@ exports.register = function(server) {
       listening[type + '::' + data.id] = false;
     }
 
-    var redis_client = redis.createClient();
+    var redis_client = redis.createClient(6379, Config.redisHost);
     redis_client.on('message', function(channel, message) {
       console.log('SOCKET ('+socket.id+') EMIT ' + channel)
       socket.emit(channel, JSON.parse(message));

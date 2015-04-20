@@ -1,5 +1,6 @@
 var redis         = require('redis')
-  , redis_client  = redis.createClient();
+  , Config        = require('../../Config.js')
+  , redis_client  = redis.createClient(6379, Config.redisHost);
 
 
 module.exports = exports = function broadcastPlugin (schema, options) {
